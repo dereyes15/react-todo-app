@@ -13,7 +13,7 @@ class InputTodo extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		if(this.sate.title.trim()) {
+		if(this.state.title.trim()) {
 			this.props.addTodoProps(this.state.title);
 			this.setState({
 				title:""
@@ -36,7 +36,7 @@ class InputTodo extends Component {
 					value={title}
 					onChange={this.onChange}
 				/>
-				<button className="input-submit"> Submit </button>
+				<button className="input-submit">Submit</button>
 			</form>
 		)
 	}
