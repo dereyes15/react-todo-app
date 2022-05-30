@@ -24,6 +24,8 @@ class InputTodo extends Component {
 	};
 
 	render() {
+		const { title } = this.state
+
 		return(
 			<form className="form-container" onSubmit={this.handleSubmit}>
 				<input 
@@ -31,7 +33,7 @@ class InputTodo extends Component {
 					type="text"
 					name="title"
 					placeholder="What's your next to-do? ..." 
-					value={this.state.title}
+					value={title}
 					onChange={this.onChange}
 				/>
 				<button className="input-submit"> Submit </button>
