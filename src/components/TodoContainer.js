@@ -38,6 +38,17 @@ class TodoContainer extends React.Component {
 		}))
 	};
 
+	addTodo = title => {
+		const newTodo = {
+			id: this.state.todos.length + 1,
+			title: title, 
+			completed: false
+		};
+		this.setState({
+			todos: [...this.state.todos, newTodo]
+		});
+	};
+
 	deleteTodo = id => {
 		this.setState({
 			todos: [
@@ -52,7 +63,7 @@ class TodoContainer extends React.Component {
 		return(
 			<React.Fragment>
 				<Header />
-				<InputTodo />
+				<InputTodo addTodoProps={this.addTodo} />
 				<TodosList 
 					todos={this.state.todos}
 					handleChangeProps={this.handleChange} 
